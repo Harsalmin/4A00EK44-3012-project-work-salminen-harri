@@ -6,7 +6,9 @@ public class Contact {
     private String address;
     private String email;
 
-    public Contact(String personalId, String firstName, String lastName, String phoneNumber) {
+    public Contact(String personalId, String firstName, String lastName, 
+    String phoneNumber) {
+
         setPersonalId(personalId);
         setFirstName(firstName);
         setLastName(lastName);
@@ -59,5 +61,16 @@ public class Contact {
 
     public String getEmail() {
         return email;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact: \n" + 
+        "Personal ID: " + personalId +
+        "\nFirst name: " + firstName +
+        "\nLast name: " + lastName +
+        "\nPhone number: " + phoneNumber +
+        "\nAddress: " + address +
+        "\nE-mail: " + email + "\n";
     }
 }
