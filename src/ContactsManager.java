@@ -39,8 +39,24 @@ public class ContactsManager {
             throw new IllegalArgumentException(
                 "There are no contact information");
         } else {
+            int index = 1;
             for (Contact contact : contacts) {
+                System.out.println("Contact " + index + ":");
                 System.out.println(contact.toString());
+                index++;
+            }
+        }
+    }
+
+    public void displayAllContactsShort() {
+        if (contacts.isEmpty()) {
+            throw new IllegalArgumentException(
+                "There are no contact information");
+        } else {
+            int index = 1;
+            for (Contact contact : contacts) {
+                System.out.println(index + ". " + contact.toStringShort());
+                index++;
             }
         }
     }

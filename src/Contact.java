@@ -6,13 +6,7 @@ public class Contact {
     private String address;
     private String email;
 
-    public Contact(String personalId, String firstName, String lastName, 
-    String phoneNumber) {
-
-        setPersonalId(personalId);
-        setFirstName(firstName);
-        setLastName(lastName);
-        setPhoneNumber(phoneNumber);
+    public Contact() {
     }
 
     public void setPersonalId(String personalId) {
@@ -63,10 +57,14 @@ public class Contact {
         return email;
     }
 
+    public String toStringShort() {
+        return "ID: " + personalId +
+        ", " + firstName + " " + lastName;
+    }
+
     @Override
     public String toString() {
-        return "Contact: \n" + 
-        "Personal ID: " + personalId +
+        return "Personal ID: " + personalId +
         "\nFirst name: " + firstName +
         "\nLast name: " + lastName +
         "\nPhone number: " + phoneNumber +
