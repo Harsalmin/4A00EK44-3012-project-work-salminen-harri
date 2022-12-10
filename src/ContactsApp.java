@@ -19,12 +19,13 @@ public class ContactsApp {
         System.out.println("5. Display all contacts");
         System.out.println("6. Exit program");
         System.out.println();
-        int option = askOption(6, 1);
-        System.out.println();
-        mainMenuSwitch(option);
+        mainMenuSwitch();
     }
 
-    public static void mainMenuSwitch(int option) {
+    public static void mainMenuSwitch() {
+        int option = askOption(6, 1);
+        System.out.println();
+        
         switch(option) {
             case 1:
                 addContactMenu();
@@ -81,7 +82,44 @@ public class ContactsApp {
         if (option == manager.getContacts().size() + 1) {
             mainMenu();
         } else {
+            updateContactItemMenu(option - 1);
+        }
+    }
 
+    public static void updateContactItemMenu(int index) {
+        Contact contact = manager.getContact(index);
+        System.out.println(contact.toString());
+        System.out.println();
+        System.out.println("What would you like to update?");
+        System.out.println();
+        System.out.println("1. Personal ID");
+        System.out.println("2. First name");
+        System.out.println("3. Last name");
+        System.out.println("4. Phone number");
+        System.out.println("5. Address");
+        System.out.println("6. E-mail");
+        System.out.println("7. Back to main menu");
+        System.out.println();
+        updateMenuSwitch();
+    }
+
+    public static void updateMenuSwitch() {
+        int option = askOption(7, 1);
+        switch(option) {
+            case 1:
+            break;
+            case 2:
+            break;
+            case 3:
+            break;
+            case 4:
+            break;
+            case 5:
+            break;
+            case 6:
+            break;
+            case 7:
+                mainMenu();
         }
     }
 
