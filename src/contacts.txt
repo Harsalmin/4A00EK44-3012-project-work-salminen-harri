@@ -1,2 +1,3 @@
 131052-308T;Jack;Smith;+3584023423;Hämeenkatu 1;jack.smith@gmail.com
 234567-087U;Marja;Peltomaa;+358507774455;Teiskontie 6;marja.peltomaa@elisa.fi
+345678-555T;Harri;Salminen;+358506789900;Insinöörinkatu 1;null
