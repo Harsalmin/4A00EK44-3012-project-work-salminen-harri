@@ -27,10 +27,16 @@ public class ContactsManager {
     }
 
     public String deleteContact(Contact contact) {
-        contacts.remove(contact);
-        FileHelper.writeFile(this);
-        return "Contact removed\n";
+        try {
+            contacts.remove(contact);
+            FileHelper.writeFile(this);
+            return "Contact removed\n";
+        } catch (NullPointerException npe) {
+            throw new NullPointerException(
+                "Could not find contact to be removed");
+        }
     }
+        
 
     public String displayAllContacts() {
         if (contacts.isEmpty()) {

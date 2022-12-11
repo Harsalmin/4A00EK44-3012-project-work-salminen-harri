@@ -18,10 +18,12 @@ public class DeleteMenu {
                 "Are you sure you want to delete this contact? (y/n): ");
             char answer = c.readLine().charAt(0);
             if (answer == 'y') {
-                System.out.println(
+                try {
+                    System.out.println(
                     manager.deleteContact(manager.getContact(option - 1)));
-            } else {
-                ContactsApp.mainMenu();
+                } catch (NullPointerException npe) {
+                    System.out.println(npe.getMessage());
+                }
             }
         }
         ContactsApp.mainMenu();
