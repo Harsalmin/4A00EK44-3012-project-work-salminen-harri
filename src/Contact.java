@@ -10,7 +10,8 @@ public class Contact {
     }
 
     public void setPersonalId(String personalId) {
-        if (personalId.matches("\\d{6}[+-A]\\d{3}[0-9A-FHJ-NPR-Y]")) {
+        if (personalId.matches(
+            "[0-3]\\d[01]\\d{3}[+-A][0-8]\\d[2-9][0-9A-FHJ-NPR-Y]")) {
             this.personalId = personalId;
         } else {
             throw new IllegalArgumentException(
@@ -23,7 +24,7 @@ public class Contact {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName.matches("^[A-ZÅÄÖ][A-ZÅÄÖa-zåäö-]+")) {
+        if (firstName.matches("^[A-ZÅÄÖ][A-ZÅÄÖa-zåäö-]+[a-zåäö]$")) {
             this.firstName = firstName;
         } else {
             throw new IllegalArgumentException(
@@ -36,7 +37,7 @@ public class Contact {
     }
 
     public void setLastName(String lastName) {
-        if (lastName.matches("^[A-ZÅÄÖ][A-ZÅÄÖa-zåäö-]+")) {
+        if (lastName.matches("^[A-ZÅÄÖ][A-ZÅÄÖa-zåäö-]+[a-zåäö]$")) {
             this.lastName = lastName;
         } else {
             throw new IllegalArgumentException(
@@ -49,7 +50,7 @@ public class Contact {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.matches("^\\+358\\d{5}\\d+")) {
+        if (phoneNumber.matches("^\\+358\\d{5}\\d+\\d$")) {
             this.phoneNumber = phoneNumber;
         } else {
             throw new IllegalArgumentException(
@@ -63,9 +64,9 @@ public class Contact {
 
     public void setAddress(String address) {
         if (address.matches(
-            "^[A-ZÅÄÖ][\\w\\s-åäö]+ \\d+") || 
+            "^[A-ZÅÄÖ][\\w\\s-åäö]+ \\d{1,3}[A-Za-z0-9 ]*") || 
             address.equals("null") ||
-            address.equals(null)) {
+            address.equals("")) {
 
             this.address = address;
         } else {
@@ -82,7 +83,7 @@ public class Contact {
         if (email.matches(
             "^\\w+[\\w-.]*@\\w+((-\\w+)|(\\w*))\\.[a-z]{2,4}$") || 
             email.equals("null") ||
-            email.equals(null)) {
+            email.equals("")) {
 
             this.email = email;
         } else {

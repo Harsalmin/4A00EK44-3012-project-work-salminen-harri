@@ -21,7 +21,8 @@ public class AddMenu {
         System.out.println("""
             Please use the format of 6 digits followed by +/-/A followed
             by 3 digits and either a digit or letter from group
-            {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}.
+            {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}. The first 6 digits
+            are for day, month and year of birth.
             """);
         System.out.println("Please enter the personal ID");
         String answer = "";
@@ -133,7 +134,7 @@ public class AddMenu {
             new address. You can leave the address blank.
             """);
         System.out.println("Please enter the address: ");
-        String answer = "";
+        String answer = "answer";
         boolean inputSucces = false;
         do {
             try {
@@ -147,7 +148,7 @@ public class AddMenu {
             } catch (IllegalArgumentException iae) {
                 System.out.println(iae.getMessage());
             }
-        } while (!inputSucces && !answer.equals("cancel"));
+        } while (!inputSucces && !answer.equals("cancel") && answer.equals(""));
         enterEmail(contact);
     }
 
@@ -176,7 +177,7 @@ public class AddMenu {
             } catch (IllegalArgumentException iae) {
                 System.out.println(iae.getMessage());
             }
-        } while (!inputSucces && !answer.equals("cancel"));
+        } while (!inputSucces && !answer.equals("cancel") && answer.equals(""));
         System.out.println(manager.addContact(contact));
         System.out.println();
         ContactsApp.mainMenu();

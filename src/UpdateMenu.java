@@ -65,7 +65,8 @@ public class UpdateMenu {
         System.out.println("""
                 Please use the format of 6 digits followed by +/-/A followed
                 by 3 digits and either a digit or letter from group
-                {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}.
+                {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}.The first 6 digits
+                are for day, month and year of birth.
                 """);
         System.out.print("Please enter new personal ID: ");
         try {
