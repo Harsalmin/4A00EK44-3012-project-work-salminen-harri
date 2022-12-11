@@ -66,7 +66,6 @@ public class UpdateMenu {
                 Please use the format of 6 digits followed by +/-/A followed
                 by 3 digits and either a digit or letter from group
                 {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}.
-
                 """);
         System.out.print("Please enter new personal ID: ");
         try {
@@ -84,7 +83,6 @@ public class UpdateMenu {
         System.out.println("""
                 Please use the format of capital letter followed by letters or
                 dash when entering new first name for contact.
-
                 """);
         System.out.println("Please enter new first name: ");
         try {
@@ -102,7 +100,6 @@ public class UpdateMenu {
         System.out.println("""
                 Please use the format of capital letter followed by letters or
                 dash when entering new last name for contact.
-
                 """);
         System.out.println("Please enter new last name: ");
         try {
@@ -120,7 +117,6 @@ public class UpdateMenu {
         System.out.println("""
                 Please use the format of +358 plus the phone number without
                 the first zero when entering new phone number.
-
                 """);
         System.out.println("Please enter new phone number: ");
         try {
@@ -140,7 +136,6 @@ public class UpdateMenu {
                 Please use the format of capital letter followed by letters or
                 dash or spaces followed by a space and digits when entering
                 new address. You can leave the address blank.
-
                 """);
         System.out.println("Please enter new address: ");
         try {
@@ -158,9 +153,8 @@ public class UpdateMenu {
         System.out.println("""
                 Please use the format of letters, dots, digits and other
                 non-whitespace characters followed by @ followed by
-                more non-whitespace characters, dot, more non-whitespace
-                characters.
-
+                letters, digits, dots or dashes, followed by a dot and 2 to 4
+                letters signifying the top-level domain
                 """);
         System.out.println("Please enter new email: ");
         try {

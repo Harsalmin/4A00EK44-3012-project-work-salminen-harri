@@ -36,7 +36,9 @@ public class FileHelper {
             mngr.addContact(contact);
         } catch (IOException e) {
             System.out.println("Error reading file");
-        } 
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException(iae.getMessage());
+        }
     }
 
     public static void writeFile(ContactsManager manager) {

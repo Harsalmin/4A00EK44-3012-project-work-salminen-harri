@@ -4,7 +4,11 @@ public class ContactsApp {
     public static Console c = System.console();
     public static ContactsManager manager = new ContactsManager();
     public static void main(String[] args) {
-        FileHelper.readFile(manager);
+        try {
+            FileHelper.readFile(manager);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println("Welcome to ContactsApp!");
         System.out.println();
         mainMenu();
@@ -44,12 +48,18 @@ public class ContactsApp {
                 break;
             
             case 5:
-                manager.displayAllContacts();
+                try {
+                    manager.displayAllContacts();
+                } catch (IllegalArgumentException iae) {
+                    System.out.println(iae.getMessage());
+                }
+                System.out.println();
                 mainMenu();
                 break;
 
             case 6:
-                System.out.println("Thank you for using ContactsApp. Goodbye!\n");
+                System.out.println(
+                    "Thank you for using ContactsApp. Goodbye!\n");
                 System.exit(0);
         }
     }
