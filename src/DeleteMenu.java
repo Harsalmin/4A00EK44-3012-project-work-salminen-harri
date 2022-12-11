@@ -6,7 +6,7 @@ public class DeleteMenu {
 
     public static void deleteContactMenu() {
         System.out.println("Please select contact to delete: ");
-        manager.displayAllContactsShort();
+        System.out.println(manager.displayAllContactsShort());
         System.out.println(
                 manager.getContacts().size() + 1 + ". Back to main menu");
         System.out.println();
@@ -14,7 +14,15 @@ public class DeleteMenu {
         if (option == manager.getContacts().size() + 1) {
             ContactsApp.mainMenu();
         } else {
-            manager.deleteContact(manager.getContact(option - 1));
+            System.out.print(
+                "Are you sure you want to delete this contact? (y/n): ");
+            char answer = c.readLine().charAt(0);
+            if (answer == 'y') {
+                System.out.println(
+                    manager.deleteContact(manager.getContact(option - 1)));
+            } else {
+                ContactsApp.mainMenu();
+            }
         }
         ContactsApp.mainMenu();
     }

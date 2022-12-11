@@ -32,7 +32,7 @@ public class SearchMenu {
     public static void searchContactIndex() {
         System.out.println("Please select contact to view:");
         System.out.println();
-        manager.displayAllContactsShort();
+        System.out.println(manager.displayAllContactsShort());
         System.out.println(
                 manager.getContacts().size() + 1 + ". Back to search menu");
         System.out.println();
@@ -40,7 +40,8 @@ public class SearchMenu {
         if (option == manager.getContacts().size() + 1) {
             searchMenu();
         } else {
-            manager.displayContact(manager.getContact(option - 1));
+            System.out.println(
+                manager.getContact(option - 1).toString());
             searchMenu();
         }
     }
@@ -55,7 +56,7 @@ public class SearchMenu {
             System.out.println("Found following results:");
             System.out.println();
             for (Contact contact : results) {
-                manager.displayContact(contact);
+                System.out.println(contact.toString());
             }
         }
         searchMenu();

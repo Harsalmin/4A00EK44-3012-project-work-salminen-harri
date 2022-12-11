@@ -10,7 +10,7 @@ public class FileHelper {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            RandomAccessFile raf = new RandomAccessFile(file, "rw");
+            RandomAccessFile raf = new RandomAccessFile(file, "r");
             while (raf.getFilePointer() < raf.length()) {
                 readContact(raf, manager);
             }
@@ -44,13 +44,14 @@ public class FileHelper {
     public static void writeFile(ContactsManager manager) {
         try {
             File file = new File("contacts.txt");
+            file.delete();
             if (!file.exists()) {
                 file.createNewFile();
             }
-            RandomAccessFile raf = new RandomAccessFile(file, "rw");
+            RandomAccessFile raf = new RandomAccessFile(file, "rws");
 
             File tmpfile = new File("temp.txt");
-            RandomAccessFile tempraf = new RandomAccessFile(tmpfile, "rw");
+            RandomAccessFile tempraf = new RandomAccessFile(tmpfile, "rws");
 
             ArrayList<Contact> contacts = manager.getContacts();
             for (Contact contact : contacts) {
@@ -91,6 +92,7 @@ public class FileHelper {
                 copy.writeBytes(original.readLine());
                 copy.writeBytes(System.lineSeparator());
             }
+
         } catch (IOException e) {
             System.out.println("Error writing into file");
         }

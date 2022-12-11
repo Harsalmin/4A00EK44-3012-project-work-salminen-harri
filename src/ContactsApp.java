@@ -49,11 +49,10 @@ public class ContactsApp {
             
             case 5:
                 try {
-                    manager.displayAllContacts();
+                    System.out.println(manager.displayAllContacts());
                 } catch (IllegalArgumentException iae) {
                     System.out.println(iae.getMessage());
                 }
-                System.out.println();
                 mainMenu();
                 break;
 

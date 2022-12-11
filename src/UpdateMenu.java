@@ -6,7 +6,7 @@ public class UpdateMenu {
 
     public static void updateContactMenu() {
         System.out.println("Please select contact to update: ");
-        manager.displayAllContactsShort();
+        System.out.println(manager.displayAllContactsShort());
         System.out.println(
                 manager.getContacts().size() + 1 + ". Back to main menu");
         System.out.println();

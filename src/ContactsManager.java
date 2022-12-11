@@ -28,37 +28,38 @@ public class ContactsManager {
 
     public String deleteContact(Contact contact) {
         contacts.remove(contact);
-        return "Contact removed";
+        FileHelper.writeFile(this);
+        return "Contact removed\n";
     }
 
-    public void displayContact(Contact contact) {
-        System.out.println(contact.toString());
-    }
-
-    public void displayAllContacts() {
+    public String displayAllContacts() {
         if (contacts.isEmpty()) {
             throw new IllegalArgumentException(
                 "There are no contact information");
         } else {
             int index = 1;
+            String result = "";
             for (Contact contact : contacts) {
-                System.out.println("Contact " + index + ":");
-                System.out.println(contact.toString());
+                result += "Contact " + index + ":\n";
+                result += contact.toString() + "\n";
                 index++;
             }
+            return result;
         }
     }
 
-    public void displayAllContactsShort() {
+    public String displayAllContactsShort() {
         if (contacts.isEmpty()) {
             throw new IllegalArgumentException(
                 "There are no contact information");
         } else {
             int index = 1;
+            String result = "";
             for (Contact contact : contacts) {
-                System.out.println(index + ". " + contact.toStringShort());
+                result += index + ". " + contact.toStringShort() + "\n";
                 index++;
             }
+            return result;
         }
     }
 
