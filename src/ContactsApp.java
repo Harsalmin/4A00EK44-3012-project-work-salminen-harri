@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.ArrayList;
 
 public class ContactsApp {
     public static Console c = System.console();
@@ -33,7 +34,6 @@ public class ContactsApp {
 
             case 2:
                 deleteContactMenu();
-                mainMenu();
                 break;
 
             case 3: 
@@ -41,7 +41,8 @@ public class ContactsApp {
                 break;
 
             case 4:
-            break;
+                searchMenu();
+                break;
             
             case 5:
                 manager.displayAllContacts();
@@ -72,6 +73,21 @@ public class ContactsApp {
         mainMenu();
     }
 
+    public static void deleteContactMenu() {
+        System.out.println("Please select contact to delete: ");
+        manager.displayAllContactsShort();
+        System.out.println(
+                manager.getContacts().size() + 1 + ". Back to main menu");
+        System.out.println();
+        int option = askOption(manager.getContacts().size() + 1, 1);
+        if (option == manager.getContacts().size() + 1) {
+            mainMenu();
+        } else {
+            manager.deleteContact(manager.getContact(option - 1));
+        }
+        mainMenu();
+    }
+
     public static void updateContactMenu() {
         System.out.println("Please select contact to update: ");
         manager.displayAllContactsShort();
@@ -98,7 +114,7 @@ public class ContactsApp {
         System.out.println("4. Phone number");
         System.out.println("5. Address");
         System.out.println("6. E-mail");
-        System.out.println("7. Back to main menu");
+        System.out.println("7. Back to update menu");
         System.out.println();
         updateMenuSwitch();
     }
@@ -119,22 +135,64 @@ public class ContactsApp {
             case 6:
             break;
             case 7:
+                updateContactMenu();
+        }
+    }
+
+    public static void searchMenu() {
+        System.out.println("How would you like to perform a contact search?");
+        System.out.println();
+        System.out.println("1. Through index");
+        System.out.println("2. Through keyword");
+        System.out.println("3. Back to main menu");
+        System.out.println();
+        searchMenuSwitch();
+    }
+
+    public static void searchMenuSwitch() {
+        int option = askOption(3, 1);
+        switch(option) {
+            case 1:
+                searchContactIndex();
+                break;
+            case 2:
+                searchContactKeyword();
+                break;
+            case 3:
                 mainMenu();
         }
     }
 
-    public static void deleteContactMenu() {
-        System.out.println("Please select contact to delete: ");
+    public static void searchContactIndex() {
+        System.out.println("Please select contact to view:");
+        System.out.println();
         manager.displayAllContactsShort();
         System.out.println(
-                manager.getContacts().size() + 1 + ". Back to main menu");
+                manager.getContacts().size() + 1 + ". Back to search menu");
         System.out.println();
         int option = askOption(manager.getContacts().size() + 1, 1);
         if (option == manager.getContacts().size() + 1) {
-            mainMenu();
+            searchMenu();
         } else {
-            manager.deleteContact(manager.getContact(option - 1));
+            manager.displayContact(manager.getContact(option-1));
+            searchMenu();
         }
+    }
+
+    public static void searchContactKeyword() {
+        System.out.print("Please enter a keyword to search for: ");
+        String keyword = c.readLine();
+        ArrayList<Contact> results = manager.searchKeyword(keyword);
+        if (results.isEmpty()) {
+            System.out.println("No contacts found with that keyword");
+        } else {
+            System.out.println("Found following results:");
+            System.out.println();
+            for (Contact contact : results) {
+                manager.displayContact(contact);
+            }
+        }
+        searchMenu();
     }
 
     public static int askOption(int max, int min) {

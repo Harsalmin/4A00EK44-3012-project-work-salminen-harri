@@ -10,7 +10,12 @@ public class Contact {
     }
 
     public void setPersonalId(String personalId) {
-        this.personalId = personalId;
+        if (personalId.contains("\\d{6}[+-A]\\d{3}[0-9A-FHJ-NPR-Y]")) {
+            this.personalId = personalId;
+        } else {
+            throw new IllegalArgumentException("You did not enter the " +
+            "personal ID in correct format!");
+        }
     }
 
     public String getPersonalId() {

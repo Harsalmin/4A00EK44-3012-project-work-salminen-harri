@@ -31,7 +31,7 @@ public class ContactsManager {
     }
 
     public void displayContact(Contact contact) {
-        contact.toString();
+        System.out.println(contact.toString());
     }
 
     public void displayAllContacts() {
@@ -61,9 +61,25 @@ public class ContactsManager {
         }
     }
 
+    public ArrayList<Contact> searchKeyword(String keyword) {
+        keyword.toLowerCase();
+        ArrayList<Contact> results = new ArrayList<Contact>();
+        for (Contact contact : contacts) {
+            String temp = FileHelper.contactToString(contact).toLowerCase();
+            if (temp.contains(keyword)) {
+                results.add(contact);
+            }
+        }
+        return results;
+    }
+
     public void updatePersonalId(int index, String newId) {
-        contacts.get(index).setPersonalId(newId);
-        FileHelper.writeFile(this);
+        try {
+            contacts.get(index).setPersonalId(newId);
+            FileHelper.writeFile(this);
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException(iae.getMessage());
+        }
     }
 
     public void updateFirstName(int index, String newFirstName) {
