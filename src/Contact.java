@@ -10,11 +10,11 @@ public class Contact {
     }
 
     public void setPersonalId(String personalId) {
-        if (personalId.contains("\\d{6}[+-A]\\d{3}[0-9A-FHJ-NPR-Y]")) {
+        if (personalId.matches("\\d{6}[+-A]\\d{3}[0-9A-FHJ-NPR-Y]")) {
             this.personalId = personalId;
         } else {
-            throw new IllegalArgumentException("You did not enter the " +
-            "personal ID in correct format!");
+            throw new IllegalArgumentException(
+                "You did not enter the personal ID in correct format!");
         }
     }
 
@@ -23,7 +23,12 @@ public class Contact {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        if (firstName.matches("^[A-ZÅÄÖ][\\w-åäö]+")) {
+            this.firstName = firstName;
+        } else {
+            throw new IllegalArgumentException(
+                "You did not enter the first name in correct format!");
+        }
     }
 
     public String getFirstName() {
@@ -31,7 +36,12 @@ public class Contact {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        if (lastName.matches("^[A-ZÅÄÖ][\\w-åäö]+")) {
+            this.lastName = lastName;
+        } else {
+            throw new IllegalArgumentException(
+                "You did not enter the last name in correct format!");
+        }
     }
 
     public String getLastName() {
@@ -39,7 +49,12 @@ public class Contact {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if (phoneNumber.matches("^+358\\d{5}\\d+")) {
+            this.phoneNumber = phoneNumber;
+        } else {
+            throw new IllegalArgumentException(
+                "You did not enter the phone number in correct format!");
+        }
     }
 
     public String getPhoneNumber() {
@@ -47,7 +62,13 @@ public class Contact {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        if (address.matches(
+            "^[A-ZÅÄÖ][\\w\\s-åäö]+ \\d+") || address.equals(null)) {
+            this.address = address;
+        } else {
+            throw new IllegalArgumentException(
+                "You did not enter the address in correct format!");
+        }
     }
 
     public String getAddress() {
@@ -55,7 +76,12 @@ public class Contact {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (email.matches("\\S+@\\S+.\\S+") || email.equals(null)) {
+            this.email = email;
+        } else {
+            throw new IllegalArgumentException(
+                "You did not enter the email in correct format!");
+        }
     }
 
     public String getEmail() {

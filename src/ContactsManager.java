@@ -14,7 +14,8 @@ public class ContactsManager {
             }
         }
         contacts.add(contact);
-        return "Contact added!";
+        FileHelper.writeFile(this);
+        return "Contact added succesfully!";
     }
 
     public Contact getContact(int index) {
@@ -73,37 +74,63 @@ public class ContactsManager {
         return results;
     }
 
-    public void updatePersonalId(int index, String newId) {
+    public String updatePersonalId(int index, String newId) {
         try {
             contacts.get(index).setPersonalId(newId);
             FileHelper.writeFile(this);
+            return "Update succesful!";
         } catch (IllegalArgumentException iae) {
             throw new IllegalArgumentException(iae.getMessage());
         }
     }
 
-    public void updateFirstName(int index, String newFirstName) {
-        contacts.get(index).setFirstName(newFirstName);
-        FileHelper.writeFile(this);
+    public String updateFirstName(int index, String newFirstName) {
+        try {
+            contacts.get(index).setFirstName(newFirstName);
+            FileHelper.writeFile(this);
+            return "Update succesful!";
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException(iae.getMessage());
+        } 
     }
 
-    public void updateLastName(int index, String newLastName) {
-        contacts.get(index).setLastName(newLastName);
-        FileHelper.writeFile(this);
+    public String updateLastName(int index, String newLastName) {
+        try {
+            contacts.get(index).setLastName(newLastName);
+            FileHelper.writeFile(this);
+            return "Update succesful!";
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException(iae.getMessage());
+        }
     }
 
-    public void updatePhoneNumber(int index, String newNumber) {
-        contacts.get(index).setPhoneNumber(newNumber);
-        FileHelper.writeFile(this);
+    public String updatePhoneNumber(int index, String newNumber) {
+        try {
+            contacts.get(index).setPhoneNumber(newNumber);
+            FileHelper.writeFile(this);
+            return "Update succesful!";
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException(iae.getMessage());
+        }
     }
 
-    public void updateAddress(int index, String newAddress) {
-        contacts.get(index).setAddress(newAddress);
-        FileHelper.writeFile(this);
+    public String updateAddress(int index, String newAddress) {
+        try {
+            contacts.get(index).setAddress(newAddress);
+            FileHelper.writeFile(this);
+            return "Update succesful!";
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException(iae.getMessage());
+        }
     }
 
-    public void updateEmail(int index, String newEmail) {
-        contacts.get(index).setEmail(newEmail);
-        FileHelper.writeFile(this);
+    public String updateEmail(int index, String newEmail) {
+        try {
+            contacts.get(index).setEmail(newEmail);
+            FileHelper.writeFile(this);
+            return "Update succesful!";
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException(iae.getMessage());
+        }
     }
 }
