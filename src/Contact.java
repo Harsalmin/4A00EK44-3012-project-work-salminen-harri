@@ -68,7 +68,13 @@ public class Contact {
      * @throws IllegalArgumentException If validation fails for any reason.
      */
     public void setFirstName(String firstName) {
-        if (firstName.matches("^[A-ZÅÄÖ][A-ZÅÄÖa-zåäö-]+[a-zåäö]$")) {
+        /*
+         * \u00C5\u00C4\u00D6 are unicode codes for ÅÄÖ
+         * \u00E5\u00E4\u00F6 are unicode codes for åäö
+         */
+        if (firstName.matches(
+            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][A-ZÅÄÖ\u00C5\u00C4\u00D6a-" +
+                "zåäö\u00E5\u00E4\u00F6-]+[a-zåäö\u00E5\u00E4\u00F6]$")) {
             this.firstName = firstName;
         } else {
             throw new IllegalArgumentException(
@@ -98,7 +104,13 @@ public class Contact {
      * reason.
      */
     public void setLastName(String lastName) {
-        if (lastName.matches("^[A-ZÅÄÖ][A-ZÅÄÖa-zåäö-]+[a-zåäö]$")) {
+        /*
+         * \u00C5\u00C4\u00D6 are unicode codes for ÅÄÖ
+         * \u00E5\u00E4\u00F6 are unicode codes for åäö
+         */ 
+        if (lastName.matches(
+            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][A-ZÅÄÖ\u00C5\u00C4\u00D6a-" +
+                "zåäö\u00E5\u00E4\u00F6-]+[a-zåäö\u00E5\u00E4\u00F6]$")) {
             this.lastName = lastName;
         } else {
             throw new IllegalArgumentException(
@@ -159,8 +171,13 @@ public class Contact {
      * @throws IllegalArgumentException If validation fails for any reason.
      */
     public void setAddress(String address) {
+        /*
+         * \u00C5\u00C4\u00D6 are unicode codes for ÅÄÖ
+         * \u00E5\u00E4\u00F6 are unicode codes for åäö
+         */
         if (address.matches(
-            "^[A-ZÅÄÖ][\\w\\s-åäö]+ \\d{1,3}[A-Za-z0-9 ]*") || 
+            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][\\w\\såäö\u00E5\u00E4\u00F6-]+ " +
+            "\\d{1,3}[A-Za-z0-9 ]*") || 
             address.equals("null") ||
             address.equals("")) {
 
@@ -188,7 +205,8 @@ public class Contact {
      * 
      * NOTE: The regular expression is lacking,
      * missing support for top-level domains like .co.uk. Also the regular
-     * expression is missing special characters like ?, %, ! or &.
+     * expression is missing special characters like ?, %, ! or &, 
+     * and å,ä and ö.
      * 
      * @param email The email user inputs for validation against the regular
      * expression.

@@ -41,7 +41,7 @@ public class ContactsManager {
     public String displayAllContacts() {
         if (contacts.isEmpty()) {
             throw new IllegalArgumentException(
-                "There are no contact information");
+                "There are no contact information\n");
         } else {
             int index = 1;
             String result = "";

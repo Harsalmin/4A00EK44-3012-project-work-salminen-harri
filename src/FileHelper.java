@@ -1,9 +1,16 @@
 import java.io.*;
 import java.util.ArrayList;
 /**
- * Helper class to read and write into the contacts database
+ * Helper class to read and write into the contacts database, contained in a 
+ * text file named "contacts.txt".
+ * 
+ * @author Harri Salminen
  */
 public class FileHelper {
+    /**
+     * 
+     * @param manager
+     */
     public static void readFile(ContactsManager manager) {
         try {
             File file = new File("contacts.txt");
@@ -22,6 +29,11 @@ public class FileHelper {
         }
     }
 
+    /**
+     * 
+     * @param raf
+     * @param mngr
+     */
     public static void readContact(RandomAccessFile raf, ContactsManager mngr) {
         try {
             String line = raf.readLine();
@@ -41,6 +53,10 @@ public class FileHelper {
         }
     }
 
+    /**
+     * 
+     * @param manager
+     */
     public static void writeFile(ContactsManager manager) {
         try {
             File file = new File("contacts.txt");
@@ -73,6 +89,11 @@ public class FileHelper {
         }
     }
 
+    /**
+     * 
+     * @param contact
+     * @return
+     */
     public static String contactToString(Contact contact) {
         return contact.getPersonalId() + ";" +
             contact.getFirstName() + ";" +
@@ -82,6 +103,11 @@ public class FileHelper {
             contact.getEmail();
     }
 
+    /**
+     * 
+     * @param original
+     * @param copy
+     */
     public static void copyFile(
         RandomAccessFile original, RandomAccessFile copy) {
         try {
