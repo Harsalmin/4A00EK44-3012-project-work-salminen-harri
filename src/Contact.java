@@ -73,12 +73,13 @@ public class Contact {
          * \u00E5\u00E4\u00F6 are unicode codes for åäö
          */
         if (firstName.matches(
-            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][A-ZÅÄÖ\u00C5\u00C4\u00D6a-" +
-                "zåäö\u00E5\u00E4\u00F6-]+[a-zåäö\u00E5\u00E4\u00F6]$")) {
+            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][a-zåäö\u00E5\u00E4\u00F6-]+[A-ZÅÄÖ " +
+            "\u00C5\u00C4\u00D6a-zåäö\u00E5\u00E4\u00F6-]+[a-zåäö\u00E5\u00E4" +
+            "\u00F6]$")) {
             this.firstName = firstName;
         } else {
             throw new IllegalArgumentException(
-                "You did not enter the first name in correct format!");
+                "You did not enter the first name in correct format!\n");
         }
     }
 
@@ -109,12 +110,13 @@ public class Contact {
          * \u00E5\u00E4\u00F6 are unicode codes for åäö
          */ 
         if (lastName.matches(
-            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][A-ZÅÄÖ\u00C5\u00C4\u00D6a-" +
-                "zåäö\u00E5\u00E4\u00F6-]+[a-zåäö\u00E5\u00E4\u00F6]$")) {
+            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][a-zåäö\u00E5\u00E4\u00F6-]+[A-ZÅÄÖ " +
+            "\u00C5\u00C4\u00D6a-zåäö\u00E5\u00E4\u00F6-]+[a-zåäö\u00E5\u00E4" +
+            "\u00F6]$")) {
             this.lastName = lastName;
         } else {
             throw new IllegalArgumentException(
-                "You did not enter the last name in correct format!");
+                "You did not enter the last name in correct format!\n");
         }
     }
 
@@ -145,7 +147,7 @@ public class Contact {
             this.phoneNumber = phoneNumber;
         } else {
             throw new IllegalArgumentException(
-                "You did not enter the phone number in correct format!");
+                "You did not enter the phone number in correct format!\n");
         }
     }
 
@@ -176,7 +178,7 @@ public class Contact {
          * \u00E5\u00E4\u00F6 are unicode codes for åäö
          */
         if (address.matches(
-            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][\\w\\såäö\u00E5\u00E4\u00F6-]+ " +
+            "^[A-ZÅÄÖ\u00C5\u00C4\u00D6][a-zåäö\\såäö\u00E5\u00E4\u00F6-]+ " +
             "\\d{1,3}[A-Za-z0-9 ]*") || 
             address.equals("null") ||
             address.equals("")) {
@@ -184,7 +186,7 @@ public class Contact {
             this.address = address;
         } else {
             throw new IllegalArgumentException(
-                "You did not enter the address in correct format!");
+                "You did not enter the address in correct format!\n");
         }
     }
 
@@ -222,7 +224,7 @@ public class Contact {
             this.email = email;
         } else {
             throw new IllegalArgumentException(
-                "You did not enter the e-mail in correct format!");
+                "You did not enter the e-mail in correct format!\n");
         }
     }
 

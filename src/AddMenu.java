@@ -24,11 +24,11 @@ public class AddMenu {
             {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}. The first 6 digits
             are for day, month and year of birth.
             """);
-        System.out.println("Please enter the personal ID");
         String answer = "";
         boolean inputSucces = false;
         do {
             try {
+                System.out.println("Please enter the personal ID: ");
                 answer = c.readLine().strip();
                 if (answer.equalsIgnoreCase("cancel")) {
                     ContactsApp.mainMenu();
@@ -51,11 +51,11 @@ public class AddMenu {
             Please use the format of capital letter followed by letters or
             dash when entering new first name for contact.
             """);
-        System.out.println("Please enter the first name: ");
         String answer = "";
         boolean inputSucces = false;
         do {
             try {
+                System.out.println("Please enter the first name: ");
                 answer = c.readLine().strip();
                 if (answer.equalsIgnoreCase("cancel")) {
                     ContactsApp.mainMenu();
@@ -78,11 +78,11 @@ public class AddMenu {
             Please use the format of capital letter followed by letters or
             dash when entering new last name for contact.
             """);
-        System.out.println("Please enter the last name: ");
         String answer = "";
         boolean inputSucces = false;
         do {
             try {
+                System.out.println("Please enter the last name: ");
                 answer = c.readLine().strip();
                 if (answer.equalsIgnoreCase("cancel")) {
                     ContactsApp.mainMenu();
@@ -105,11 +105,11 @@ public class AddMenu {
             Please use the format of +358 plus the phone number without
             the first zero when entering new phone number.
             """);
-        System.out.println("Please enter the phone number: ");
         String answer = "";
         boolean inputSucces = false;
         do {
             try {
+                System.out.println("Please enter the phone number: ");
                 answer = c.readLine().strip();
                 if (answer.equalsIgnoreCase("cancel")) {
                     ContactsApp.mainMenu();
@@ -133,11 +133,11 @@ public class AddMenu {
             dash or spaces followed by a space and digits when entering
             new address. You can leave the address blank.
             """);
-        System.out.println("Please enter the address: ");
         String answer = "answer";
         boolean inputSucces = false;
         do {
             try {
+                System.out.println("Please enter the address: ");
                 answer = c.readLine().strip();
                 if (answer.equalsIgnoreCase("cancel")) {
                     ContactsApp.mainMenu();
@@ -148,7 +148,7 @@ public class AddMenu {
             } catch (IllegalArgumentException iae) {
                 System.out.println(iae.getMessage());
             }
-        } while (!inputSucces && !answer.equals("cancel") && answer.equals(""));
+        } while (!inputSucces && !answer.equals("cancel") && !answer.equals(""));
         enterEmail(contact);
     }
 
@@ -162,11 +162,11 @@ public class AddMenu {
             characters. You can leave the e-mail blank.
 
             """);
-        System.out.println("Please enter the email: ");
-        String answer = "";
+        String answer = "answer";
         boolean inputSucces = false;
         do {
             try {
+                System.out.println("Please enter the email: ");
                 answer = c.readLine().strip();
                 if (answer.equalsIgnoreCase("cancel")) {
                     ContactsApp.mainMenu();
@@ -177,7 +177,7 @@ public class AddMenu {
             } catch (IllegalArgumentException iae) {
                 System.out.println(iae.getMessage());
             }
-        } while (!inputSucces && !answer.equals("cancel") && answer.equals(""));
+        } while (!inputSucces && !answer.equals("cancel") && !answer.equals(""));
         System.out.println(manager.addContact(contact));
         System.out.println();
         ContactsApp.mainMenu();
