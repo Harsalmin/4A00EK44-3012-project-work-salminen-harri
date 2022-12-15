@@ -36,7 +36,7 @@ public class Contact {
      * @param personalId The personal ID that user inputs, which gets validated
      * against regular expression form.
      * 
-     * @throws IllegalArgumentException If validation fails for any reason.
+     * @throws IllegalArgumentException if validation fails for any reason.
      */
     public void setPersonalId(String personalId) {
         if (personalId.matches(
@@ -65,7 +65,7 @@ public class Contact {
      * @param firstName The first name that user inputs, which gets validated
      * against regular expression form.
      * 
-     * @throws IllegalArgumentException If validation fails for any reason.
+     * @throws IllegalArgumentException if validation fails for any reason.
      */
     public void setFirstName(String firstName) {
         /*
@@ -101,7 +101,7 @@ public class Contact {
      * @param lastName The last name that user inputs, which then gets validated
      * against a regular expression form
      * 
-     * @throws IllegalArgumentException Thrown if the validation fails for any
+     * @throws IllegalArgumentException if the validation fails for any
      * reason.
      */
     public void setLastName(String lastName) {
@@ -140,7 +140,7 @@ public class Contact {
      * @param phoneNumber The phone number user inputs for validation against
      * the regular expression.
      * 
-     * @throws IllegalArgumentException If the validation fails for any reason.
+     * @throws IllegalArgumentException if the validation fails for any reason.
      */
     public void setPhoneNumber(String phoneNumber) {
         if (phoneNumber.matches("^\\+358\\d{5}\\d+$")) {
@@ -170,7 +170,7 @@ public class Contact {
      * @param address The address user inputs, that gets validated against
      * the regular expression.
      * 
-     * @throws IllegalArgumentException If validation fails for any reason.
+     * @throws IllegalArgumentException if validation fails for any reason.
      */
     public void setAddress(String address) {
         /*
@@ -213,7 +213,7 @@ public class Contact {
      * @param email The email user inputs for validation against the regular
      * expression.
      * 
-     * @throws IllegalArgumentException If validation fails for any reason.
+     * @throws IllegalArgumentException if validation fails for any reason.
      */
     public void setEmail(String email) {
         if (email.matches(
@@ -247,6 +247,21 @@ public class Contact {
     public String toStringShort() {
         return "ID: " + personalId +
         ", " + firstName + " " + lastName;
+    }
+    
+    /**
+     * Method for writing a contact in a file in a specific, csv-style text
+     * line.
+     * 
+     * @return String with contact variables divided by semicolons.
+     */
+    public String ToStringWriteFile() {
+        return  personalId + ";" +
+                firstName + ";" +
+                lastName + ";" +
+                phoneNumber + ";" +
+                address + ";" +
+                email;
     }
 
     /**

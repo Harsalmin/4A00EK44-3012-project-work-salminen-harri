@@ -73,7 +73,7 @@ public class ContactsManager {
         keyword.toLowerCase();
         ArrayList<Contact> results = new ArrayList<Contact>();
         for (Contact contact : contacts) {
-            String temp = FileHelper.contactToString(contact).toLowerCase();
+            String temp = contact.ToStringWriteFile().toLowerCase();
             if (temp.contains(keyword)) {
                 results.add(contact);
             }
