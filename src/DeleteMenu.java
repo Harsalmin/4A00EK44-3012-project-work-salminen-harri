@@ -23,9 +23,12 @@ public class DeleteMenu {
                     manager.deleteContact(manager.getContact(option - 1)));
                 } catch (NullPointerException npe) {
                     System.out.println(npe.getMessage());
+                } catch (IllegalArgumentException iae) {
+                    System.out.println(iae.getMessage());
                 }
             }
         }
+        System.out.println();
         ContactsApp.mainMenu();
     }
 }

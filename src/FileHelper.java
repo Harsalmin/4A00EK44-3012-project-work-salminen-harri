@@ -60,7 +60,8 @@ public class FileHelper {
      * @throws IOException if reading of the file goes wrong.
      * 
      * @throws IllegalArgumentException is thrown by the set-methods of 
-     * Contact class, if info in "contacts.txt" is in wrong form.
+     * Contact class, if info in "contacts.txt" is in wrong form. Also thrown 
+     * by addContact in ContactsManager if writing into file fails.
      */
     public static void readContact(RandomAccessFile raf, ContactsManager mngr) {
         try {

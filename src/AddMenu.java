@@ -148,7 +148,8 @@ public class AddMenu {
             } catch (IllegalArgumentException iae) {
                 System.out.println(iae.getMessage());
             }
-        } while (!inputSucces && !answer.equals("cancel") && !answer.equals(""));
+        } while (
+            !inputSucces && !answer.equals("cancel") && !answer.equals(""));
         enterEmail(contact);
     }
 
@@ -177,8 +178,13 @@ public class AddMenu {
             } catch (IllegalArgumentException iae) {
                 System.out.println(iae.getMessage());
             }
-        } while (!inputSucces && !answer.equals("cancel") && !answer.equals(""));
-        System.out.println(manager.addContact(contact));
+        } while (
+            !inputSucces && !answer.equals("cancel") && !answer.equals(""));
+        try {
+            System.out.println(manager.addContact(contact));
+        } catch (IllegalArgumentException iae) {
+            System.out.println(iae.getMessage());
+        }
         System.out.println();
         ContactsApp.mainMenu();
     }
