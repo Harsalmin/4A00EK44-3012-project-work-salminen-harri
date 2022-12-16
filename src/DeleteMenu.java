@@ -1,9 +1,15 @@
 import java.io.Console;
 
+/**
+ * 
+ */
 public class DeleteMenu {
     public static Console c = System.console();
     public static ContactsManager manager = ContactsApp.manager;
 
+    /**
+     * 
+     */
     public static void deleteContactMenu() {
         System.out.println("Please select contact to delete: ");
         System.out.println(manager.displayAllContactsShort());

@@ -1,6 +1,9 @@
 import java.io.Console;
 import java.util.ArrayList;
 
+/**
+ * 
+ */
 public class SearchMenu {
     public static Console c = System.console();
     public static ContactsManager manager = ContactsApp.manager;
@@ -15,6 +18,9 @@ public class SearchMenu {
         searchMenuSwitch();
     }
 
+    /**
+     * 
+     */
     public static void searchMenuSwitch() {
         int option = ContactsApp.askOption(3, 1);
         switch (option) {
@@ -29,6 +35,9 @@ public class SearchMenu {
         }
     }
 
+    /**
+     * 
+     */
     public static void searchContactIndex() {
         System.out.println("Please select contact to view:");
         System.out.println();
@@ -46,6 +55,9 @@ public class SearchMenu {
         }
     }
 
+    /**
+     * 
+     */
     public static void searchContactKeyword() {
         System.out.print("Please enter a keyword to search for: ");
         String keyword = c.readLine();

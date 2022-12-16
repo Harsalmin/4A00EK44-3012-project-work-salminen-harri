@@ -1,5 +1,8 @@
 import java.io.Console;
 
+/**
+ * 
+ */
 public class AddMenu {
     public static Console c = System.console();
     public static ContactsManager manager = ContactsApp.manager;
@@ -14,6 +17,10 @@ public class AddMenu {
         enterPersonalId(newContact);
     }
 
+    /**
+     * 
+     * @param contact
+     */
     public static void enterPersonalId(Contact contact) {
         System.out.println();
         System.out.print("Personal ID (mandatory)");
@@ -43,6 +50,10 @@ public class AddMenu {
         enterFirstName(contact);
     }
 
+    /**
+     * 
+     * @param contact
+     */
     public static void enterFirstName(Contact contact) {
         System.out.println();
         System.out.print("First name (mandatory)");
@@ -70,13 +81,19 @@ public class AddMenu {
         enterLastName(contact);
     }
 
+    /**
+     * 
+     * @param contact
+     */
     public static void enterLastName(Contact contact) {
         System.out.println();
         System.out.print("Last name (mandatory)");
         System.out.println();
         System.out.println("""
             Please use the format of capital letter followed by letters or
-            dash when entering new last name for contact.
+            dash when entering new last name for contact. Last names are
+            for example Suikkonen-Peippo, McDonald and Siekkinen, not 
+            AErvinen or salminen.
             """);
         String answer = "";
         boolean inputSucces = false;
@@ -97,6 +114,10 @@ public class AddMenu {
         enterPhoneNumber(contact);
     }
 
+    /**
+     * 
+     * @param contact
+     */
     public static void enterPhoneNumber(Contact contact) {
         System.out.println();
         System.out.print("Phone number (mandatory)");
@@ -124,6 +145,10 @@ public class AddMenu {
         enterAddress(contact);
     }
 
+    /**
+     * 
+     * @param contact
+     */
     public static void enterAddress(Contact contact) {
         System.out.println();
         System.out.print("Address (optional)");
@@ -153,6 +178,10 @@ public class AddMenu {
         enterEmail(contact);
     }
 
+    /**
+     * 
+     * @param contact
+     */
     public static void enterEmail(Contact contact) {
         System.out.print("E-mail (optional)");
         System.out.println();
@@ -161,7 +190,6 @@ public class AddMenu {
             non-whitespace characters followed by @ followed by
             more non-whitespace characters, dot, more non-whitespace
             characters. You can leave the e-mail blank.
-
             """);
         String answer = "answer";
         boolean inputSucces = false;

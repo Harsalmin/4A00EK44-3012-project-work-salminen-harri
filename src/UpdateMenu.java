@@ -1,9 +1,15 @@
 import java.io.Console;
 
+/**
+ * 
+ */
 public class UpdateMenu {
     public static Console c = System.console();
     public static ContactsManager manager = ContactsApp.manager;
 
+    /**
+     * 
+     */
     public static void updateContactMenu() {
         System.out.println("Please select contact to update: ");
         System.out.println(manager.displayAllContactsShort());
@@ -18,6 +24,10 @@ public class UpdateMenu {
         }
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updateContactItemMenu(int index) {
         Contact contact = manager.getContact(index);
         System.out.println(contact.toString());
@@ -35,6 +45,10 @@ public class UpdateMenu {
         updateMenuSwitch(index);
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updateMenuSwitch(int index) {
         int option = ContactsApp.askOption(7, 1);
         switch (option) {
@@ -61,6 +75,10 @@ public class UpdateMenu {
         }
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updateId(int index) {
         System.out.println("""
                 Please use the format of 6 digits followed by +/-/A followed
@@ -80,6 +98,10 @@ public class UpdateMenu {
         updateContactItemMenu(index);
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updateFirstName(int index) {
         System.out.println("""
                 Please use the format of capital letter followed by letters or
@@ -97,6 +119,10 @@ public class UpdateMenu {
         updateContactItemMenu(index);
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updateLastName(int index) {
         System.out.println("""
                 Please use the format of capital letter followed by letters or
@@ -114,6 +140,10 @@ public class UpdateMenu {
         updateContactItemMenu(index);
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updatePhoneNumber(int index) {
         System.out.println("""
                 Please use the format of +358 plus the phone number without
@@ -132,6 +162,10 @@ public class UpdateMenu {
         updateContactItemMenu(index);
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updateAddress(int index) {
         System.out.println("""
                 Please use the format of capital letter followed by letters or
@@ -150,6 +184,10 @@ public class UpdateMenu {
         updateContactItemMenu(index);
     }
 
+    /**
+     * 
+     * @param index
+     */
     public static void updateEmail(int index) {
         System.out.println("""
                 Please use the format of letters, dots, digits and other
