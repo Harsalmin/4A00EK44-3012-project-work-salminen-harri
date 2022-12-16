@@ -4,9 +4,19 @@ import java.io.Console;
  * Menu class for deleting/removing contacts. User gets a list of shortened
  * contact info and is asked to choose contact option to delete. The option is 
  * used to determine the index of the contact in the contacts ArrayList.
+ * 
+ * @author Harri Salminen
  */
 public class DeleteMenu {
+    /**
+     * Console for user inputs
+     */
     public static Console c = System.console();
+
+    /**
+     * DeleteMenu uses the same ContactsManager object for Contact object adding
+     * as ContactsApp.
+     */
     public static ContactsManager manager = ContactsApp.manager;
 
     /**

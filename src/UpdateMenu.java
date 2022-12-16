@@ -3,9 +3,19 @@ import java.io.Console;
 /**
  * The menu class for updating existing contacts. The update are itemized for 
  * each variable, and validated before update goes through.
+ * 
+ * @author Harri Salminen
  */
 public class UpdateMenu {
+    /**
+     * Console for user inputs
+     */
     public static Console c = System.console();
+
+    /**
+     * UpdateMenu uses the same ContactsManager object for Contact object adding
+     * as ContactsApp.
+     */
     public static ContactsManager manager = ContactsApp.manager;
 
     /**

@@ -201,7 +201,7 @@ public class ContactsManager {
      * @throws IllegalArgumentException if validation of new personal ID fails 
      * or file writing fails after update.
      * 
-     * @return
+     * @return Succes message for update.
      */
     public String updatePersonalId(int index, String newId) {
         try {
@@ -233,7 +233,7 @@ public class ContactsManager {
      * @throws IllegalArgumentException if validation of new personal ID fails
      * or file writing fails after update.
      * 
-     * @return
+     * @return Succes message for update.
      */
     public String updateFirstName(int index, String newFirstName) {
         try {
@@ -265,7 +265,7 @@ public class ContactsManager {
      * @throws IllegalArgumentException if validation of new personal ID fails
      * or file writing fails after update.
      * 
-     * @return
+     * @return Succes message for update.
      */
     public String updateLastName(int index, String newLastName) {
         try {
@@ -297,7 +297,7 @@ public class ContactsManager {
      * @throws IllegalArgumentException if validation of new personal ID fails
      * or file writing fails after update.
      * 
-     * @return
+     * @return Succes message for update.
      */
     public String updatePhoneNumber(int index, String newNumber) {
         try {
@@ -329,7 +329,7 @@ public class ContactsManager {
      * @throws IllegalArgumentException if validation of new personal ID fails
      * or file writing fails after update.
      * 
-     * @return
+     * @return Succes message for update.
      */
     public String updateAddress(int index, String newAddress) {
         try {
@@ -361,7 +361,7 @@ public class ContactsManager {
      * @throws IllegalArgumentException if validation of new personal ID fails
      * or file writing fails after update.
      * 
-     * @return
+     * @return Succes message for update.
      */
     public String updateEmail(int index, String newEmail) {
         try {

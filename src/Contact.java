@@ -207,7 +207,7 @@ public class Contact {
      * 
      * NOTE: The regular expression is lacking,
      * missing support for top-level domains like .co.uk. Also the regular
-     * expression is missing special characters like ?, %, ! or &, 
+     * expression is missing special characters like ?, % or !.
      * and å,ä and ö.
      * 
      * @param email The email user inputs for validation against the regular

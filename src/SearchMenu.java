@@ -4,9 +4,19 @@ import java.util.ArrayList;
 /**
  * Menu class for searhing for contacts in database. The user has option to 
  * search contact by index and by keyword.
+ * 
+ * @author Harri Salminen
  */
 public class SearchMenu {
+    /**
+     * Console for user inputs
+     */
     public static Console c = System.console();
+
+    /**
+     * SearchMenu uses the same ContactsManager object for Contact object adding
+     * as ContactsApp.
+     */
     public static ContactsManager manager = ContactsApp.manager;
 
     /**

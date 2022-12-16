@@ -7,9 +7,19 @@ import java.io.Console;
  * way, user input is validated against regular expressions set in the set 
  * methods in Contact class, so wrong form of input does not get into the 
  * contact information.
+ * 
+ * @author Harri Salminen
  */
 public class AddMenu {
+    /**
+     * Console for user inputs
+     */
     public static Console c = System.console();
+
+    /**
+     * AddMenu uses the same ContactsManager object for Contact object adding 
+     * as ContactsApp.
+     */
     public static ContactsManager manager = ContactsApp.manager;
 
     /**

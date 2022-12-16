@@ -2,9 +2,18 @@ import java.io.Console;
 
 /**
  * The main class of ContactsApp, that is called to run the app. 
+ * 
+ * @author Harri Salminen
  */
 public class ContactsApp {
+    /**
+     * Console for user inputs.
+     */
     public static Console c = System.console();
+
+    /**
+     * New ContactsManager for storing contact information
+     */
     public static ContactsManager manager = new ContactsManager();
 
     /**
