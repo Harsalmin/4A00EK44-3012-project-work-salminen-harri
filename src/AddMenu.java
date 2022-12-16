@@ -1,25 +1,42 @@
 import java.io.Console;
 
 /**
- * 
+ * Class for menus and actions related with adding new contacts to database. The
+ * adding process is step-by-step, asking each variable of Contact object one 
+ * at a time. The process can be canceled by typing "cancel". Every step of the 
+ * way, user input is validated against regular expressions set in the set 
+ * methods in Contact class, so wrong form of input does not get into the 
+ * contact information.
  */
 public class AddMenu {
     public static Console c = System.console();
     public static ContactsManager manager = ContactsApp.manager;
 
+    /**
+     * The menu user comes to when they enter the option to add a new contact 
+     * in main menu.
+     */
     public static void addContactMenu() {
         System.out.println(
             "Please enter the following information for the new contanct.");
         System.out.println("Type \"cancel\" at any point to reverse the " +
             "creation process and get back to main menu");
 
+        /*
+         * Create the new Contact object and then send it through the
+         * information adding process.
+         */ 
         Contact newContact = new Contact();
         enterPersonalId(newContact);
     }
 
     /**
+     * Method for adding personal ID for the new contact. There are some
+     * instructions for how the personal ID is written, followed by asking for
+     * user input as long as necessary for correct form or "cancel".
      * 
-     * @param contact
+     * @param contact The Contact object created at the start, where the
+     *                personal ID info is added to.
      */
     public static void enterPersonalId(Contact contact) {
         System.out.println();
@@ -51,8 +68,12 @@ public class AddMenu {
     }
 
     /**
+     * Method for adding first name for the new contact. There are some
+     * instructions for how the first name is written, followed by asking for
+     * user input as long as necessary for correct form or "cancel".
      * 
-     * @param contact
+     * @param contact The Contact object created at the start, where the
+     *                first name info is added to.
      */
     public static void enterFirstName(Contact contact) {
         System.out.println();
@@ -82,8 +103,12 @@ public class AddMenu {
     }
 
     /**
+     * Method for adding last name for the new contact. There are some
+     * instructions for how the last name is written, followed by asking for
+     * user input as long as necessary for correct form or "cancel".
      * 
-     * @param contact
+     * @param contact The Contact object created at the start, where the
+     *                last name info is added to.
      */
     public static void enterLastName(Contact contact) {
         System.out.println();
@@ -115,8 +140,12 @@ public class AddMenu {
     }
 
     /**
+     * Method for adding phone number for the new contact. There are some
+     * instructions for how the phone number is written, followed by asking for
+     * user input as long as necessary for correct form or "cancel".
      * 
-     * @param contact
+     * @param contact The Contact object created at the start, where the
+     *                phone number info is added to.
      */
     public static void enterPhoneNumber(Contact contact) {
         System.out.println();
@@ -146,8 +175,13 @@ public class AddMenu {
     }
 
     /**
+     * Method for adding address for the new contact. There are some
+     * instructions for how the address is written, followed by asking for
+     * user input as long as necessary for correct form or "cancel". Notice 
+     * that address can be empty.
      * 
-     * @param contact
+     * @param contact The Contact object created at the start, where the
+     *                address info is added to.
      */
     public static void enterAddress(Contact contact) {
         System.out.println();
@@ -179,8 +213,13 @@ public class AddMenu {
     }
 
     /**
+     * Method for adding e-mail for the new contact. There are some
+     * instructions for how the e-mail is written, followed by asking for
+     * user input as long as necessary for correct form or "cancel". Notice
+     * that e-mail can be empty.
      * 
-     * @param contact
+     * @param contact The Contact object created at the start, where the
+     *                e-mail info is added to.
      */
     public static void enterEmail(Contact contact) {
         System.out.print("E-mail (optional)");
