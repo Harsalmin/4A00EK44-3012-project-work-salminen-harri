@@ -15,6 +15,22 @@ protfolio.
 
 ## Screenshots
 
+![display](https://user-images.githubusercontent.com/94055386/208159667-c69d4f76-e7bc-4584-9382-5790db4f7b5f.png)
+
+Displaying all contacts in the example database
+
+![add](https://user-images.githubusercontent.com/94055386/208159816-2c27aef1-d58d-47ed-abe7-e427628956d9.png)
+
+Adding a new contact
+
+![delete](https://user-images.githubusercontent.com/94055386/208159863-c9fa1ca3-cb6c-49c6-9ad3-3af39032295a.png)
+
+Deleting a contact
+
+![update](https://user-images.githubusercontent.com/94055386/208159894-34b80cd6-2090-428a-bece-e5a0ccf6f528.png)
+
+Updating a contact
+
 ## Features
 
 - list of contacts as a text file, that gets converted to ArrayList when app
@@ -34,7 +50,7 @@ to, and use command
 `git clone https://github.com/Harsalmin/4A00EK44-3012-project-work-salminen-harri.git`
 to clone the Github repository to your computer.
 4. Navigate to the cloned project folder with command line
-5. Use the command `src/javac *.java && java ContactsApp` to run the 
+5. Use the command `cd src/ && javac *.java && java ContactsApp` to run the 
 application. you can also open the `contacts.txt` file to see changes being 
 made to the database.
 
