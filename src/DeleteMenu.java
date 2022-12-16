@@ -1,20 +1,30 @@
 import java.io.Console;
 
 /**
- * 
+ * Menu class for deleting/removing contacts. User gets a list of shortened
+ * contact info and is asked to choose contact option to delete. The option is 
+ * used to determine the index of the contact in the contacts ArrayList.
  */
 public class DeleteMenu {
     public static Console c = System.console();
     public static ContactsManager manager = ContactsApp.manager;
 
     /**
-     * 
+     * The main method for contact deletion. First user is displayed the 
+     * contact information in short version, and prompted to choose the contact 
+     * to delete or go back to main menu. The user is asked for confirmation for
+     * deleting the contact. The option user chooses is used as 
+     * index of the contact to be removed.
      */
     public static void deleteContactMenu() {
         System.out.println("Please select contact to delete: ");
         System.out.println(manager.displayAllContactsShort());
+        /*
+         * Reason for using getContacts().size() + 1 is because the contacts 
+         * are listed with their index + 1
+         */
         System.out.println(
-                manager.getContacts().size() + 1 + ". Back to main menu");
+            manager.getContacts().size() + 1 + ". Back to main menu");
         System.out.println();
         int option = ContactsApp.askOption(manager.getContacts().size() + 1, 1);
         if (option == manager.getContacts().size() + 1) {
