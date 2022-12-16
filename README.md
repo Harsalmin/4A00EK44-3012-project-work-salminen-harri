@@ -39,6 +39,7 @@ is run.
 - All contacts have modifiable personal IDs, first names, last names, phone 
 numbers, addresses and e-mails.
 - Easy to navigate menus
+- Documentation under doc/index.html
 
 ## Installation & usage
 
