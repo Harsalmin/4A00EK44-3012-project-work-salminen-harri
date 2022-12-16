@@ -55,8 +55,8 @@ public class AddMenu {
         System.out.println("""
             Please use the format of 6 digits followed by +/-/A followed
             by 3 digits and either a digit or letter from group
-            {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}. The first 6 digits
-            are for day, month and year of birth.
+            {A,B,C,D,E,F,H,J,K,L,M,N,P,R,S,T,U,V,W,X,Y}.The first 6 digits
+            are for day, month and year of birth, for example 300499-675T.
             """);
         String answer = "";
         boolean inputSucces = false;
@@ -163,7 +163,8 @@ public class AddMenu {
         System.out.println();
         System.out.println("""
             Please use the format of +358 plus the phone number without
-            the first zero when entering new phone number.
+            the first zero when entering new phone number. Phone number
+            should be at 6 digits long, for example +358406767.
             """);
         String answer = "";
         boolean inputSucces = false;
@@ -237,8 +238,9 @@ public class AddMenu {
         System.out.println("""
             Please use the format of letters, dots, digits and other
             non-whitespace characters followed by @ followed by
-            more non-whitespace characters, dot, more non-whitespace
-            characters. You can leave the e-mail blank.
+            letters, digits, dots or dashes, followed by a dot and 2 to 4
+            letters signifying the top-level domain. You can leave the 
+            e-mail blank.
             """);
         String answer = "answer";
         boolean inputSucces = false;

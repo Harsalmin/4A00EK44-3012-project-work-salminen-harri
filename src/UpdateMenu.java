@@ -172,9 +172,11 @@ public class UpdateMenu {
      */
     public static void updateLastName(int index) {
         System.out.println("""
-                Please use the format of capital letter followed by letters or
-                dash when entering new last name for contact.
-                """);
+            Please use the format of capital letter followed by letters or
+            dash when entering new last name for contact. Last names are
+            for example Suikkonen-Peippo, McDonald and Siekkinen, not
+            AErvinen or salminen.
+            """);
         System.out.println("Please enter new last name: ");
         try {
             String newLastName = c.readLine().strip();
@@ -265,7 +267,8 @@ public class UpdateMenu {
                 Please use the format of letters, dots, digits and other
                 non-whitespace characters followed by @ followed by
                 letters, digits, dots or dashes, followed by a dot and 2 to 4
-                letters signifying the top-level domain
+                letters signifying the top-level domain. You can leave the 
+                e-mail blank.
                 """);
         System.out.println("Please enter new email: ");
         try {
