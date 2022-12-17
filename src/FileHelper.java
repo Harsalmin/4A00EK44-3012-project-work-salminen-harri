@@ -16,10 +16,8 @@ public class FileHelper {
      * where Contact objects will be stored after file reading
      * and object creation.
      * 
-     * @throws NullPointerException if the pathname is not given as argument
-     * during file object creation.
-     * 
-     * @throws IOException if reading of the file fails for any reason.
+     * @throws IllegalArgumentException if reading of the file goes wrong or 
+     * the pathname is not specified.
      */
     public static void readFile(ContactsManager manager) {
         try {
@@ -38,9 +36,9 @@ public class FileHelper {
             // Close the file after reading.
             raf.close();
         } catch (NullPointerException e) {
-            System.out.println("Pathname not given.");
+            throw new IllegalArgumentException("Pathname not given.");
         } catch (IOException e) {
-            System.out.println("Error reading file");
+            throw new IllegalArgumentException("Error reading file");
         }
     }
 
@@ -57,11 +55,10 @@ public class FileHelper {
      * class, where new Contact object will be stored after reading and 
      * creation.
      * 
-     * @throws IOException if reading of the file goes wrong.
-     * 
      * @throws IllegalArgumentException is thrown by the set-methods of 
      * Contact class, if info in "contacts.txt" is in wrong form. Also thrown 
-     * by addContact in ContactsManager if writing into file fails.
+     * by addContact in ContactsManager if writing into file fails. Also can be 
+     * thrown if reading of the file goes wrong.
      */
     public static void readContact(RandomAccessFile raf, ContactsManager mngr) {
         try {
@@ -76,7 +73,7 @@ public class FileHelper {
             contact.setEmail(contactArray[5]);
             mngr.addContact(contact);
         } catch (IOException e) {
-            System.out.println("Error reading file");
+            throw new IllegalArgumentException("Error reading file");
         } catch (IllegalArgumentException iae) {
             throw new IllegalArgumentException(iae.getMessage());
         }
@@ -94,10 +91,8 @@ public class FileHelper {
      * @param manager ContactsManager object, that calls this method on itself
      * when contact database is altered.
      * 
-     * @throws NullPointerException is thrown when pathname is not specified at
-     * File object creation.
-     * 
-     * @throws IOException if anything goes wrong with file altering.
+     * @throws IllegalArgumentException if pathname is not specified or 
+     * something goes wrong with writing into file.
      */
     public static void writeFile(ContactsManager manager) {
         try {
@@ -158,9 +153,9 @@ public class FileHelper {
             tempraf.close();
             tmpfile.delete();
         } catch (NullPointerException e) {
-            System.out.println("Pathname not given.");
+            throw new IllegalArgumentException("Pathname not given.");
         } catch (IOException e) {
-            System.out.println("Error writing into file");
+            throw new IllegalArgumentException("Error writing into file");
         }
     }
 
@@ -176,7 +171,8 @@ public class FileHelper {
      * @param copy RandomAccessfile object of contacts.txt/the file where info
      * is copied to.
      * 
-     * @throws IOException if anything goed wrong during the writing process.
+     * @throws IllegalArgumentException if anything goed wrong during the 
+     * writing process.
      */
     public static void copyFile(
         RandomAccessFile original, RandomAccessFile copy) {
@@ -192,7 +188,7 @@ public class FileHelper {
             }
 
         } catch (IOException e) {
-            System.out.println("Error writing into file");
+            throw new IllegalArgumentException("Error writing into file");
         }
         
     }
