@@ -55,7 +55,7 @@ to clone the Github repository to your computer.
 application. you can also open the `contacts.txt` file to see changes being 
 made to the database.
 
-I fyou would like to view the documentation, use file explorer of your OS to 
+If you would like to view the documentation, use file explorer of your OS to 
 navigate to the doc folder under the cloned project folder and open the 
 index.html file.
 
