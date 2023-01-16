@@ -59,6 +59,3 @@ I fyou would like to view the documentation, use file explorer of your OS to
 navigate to the doc folder under the cloned project folder and open the 
 index.html file.
 
-## Video link
-
-[Youtube](https://youtu.be/IrHhEE2dKhA)
